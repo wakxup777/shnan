@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Əlaqə | Red Team Academy</title>
+  <meta name="description" content="Red Team Academy ilə əlaqə saxlayın. Kurslar, qeydiyyat və əməkdaşlıq haqqında məlumat alın.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Səhifə</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="about.html">Haqqımızda</a>
+        <a href="contact.html" class="active">Əlaqə</a>
+        <a href="courses.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Əlaqə</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Səhifə</a>
+        <span class="separator">/</span>
+        <span class="current">Əlaqə</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="fade-in-left">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: #fff; margin-bottom: 10px; text-transform: uppercase;">Mesaj Göndərin</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 30px;">Suallarınız var? Aşağıdakı formu doldurun, 24 saat ərzində cavab verəcəyik.</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Ad Soyad</label>
+              <input type="text" id="name" name="name" placeholder="Adınızı daxil edin" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@nümunə.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Mövzu</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Mövzu seçin</option>
+                <option value="courses">Kurslar haqqında</option>
+                <option value="registration">Qeydiyyat</option>
+                <option value="corporate">Korporativ təlim</option>
+                <option value="partnership">Əməkdaşlıq</option>
+                <option value="other">Digər</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesaj</label>
+              <textarea id="message" name="message" placeholder="Mesajınızı yazın..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Göndər →</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info fade-in-right">
+          <div class="contact-info-card">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></p>
+              <p><a href="mailto:courses@redteamacademy.az">courses@redteamacademy.az</a></p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h3>Telefon</h3>
+              <p><a href="tel:+994501234567">+994 50 123 45 67</a></p>
+              <p><a href="tel:+994121234567">+994 12 123 45 67</a></p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h3>Ünvan</h3>
+              <p>Bakı şəhəri, Nəsimi rayonu<br>28 May küçəsi 15, AZ1000</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">⏰</div>
+            <div>
+              <h3>İş Saatları</h3>
+              <p>Bazar ertəsi - Cümə: 09:00 - 18:00</p>
+              <p>Şənbə: 10:00 - 15:00</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">💬</div>
+            <div>
+              <h3>Sosial Media</h3>
+              <p style="display: flex; gap: 10px; margin-top: 5px;">
+                <a href="#" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">GitHub</a>
+                <a href="#" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">Discord</a>
+                <a href="#" style="padding: 6px 14px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Tez-tez Verilən Suallar</h2>
+        <div class="accent-line"></div>
+        <p>Ən çox soruşulan suallar və cavabları</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Kurslar üçün əvvəlcədən təcrübə lazımdır?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Başlanğıc səviyyəli kurslarımız sıfırdan başlayır, heç bir əvvəlki təcrübə tələb olunmur. Sadəcə kompüter və internet bağlantısı kifayətdir. Orta və qabaqcıl kurslar üçün isə əvvəlki kursları və ya ekvivalent bilikləri tamamlamağınız tövsiyə olunur.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Kurslar online yoxsa onsite keçirilir?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Hər iki format mövcuddur. Online kurslarımız canlı dərslər və qeydə alınmış videolardan ibarətdir. Onsite kurslar Bakıdakı ofisimizdə keçirilir. Korporativ təlimlər üçün sizin ofisinizə gəlmək imkanımız da var.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Sertifikat verilirmi?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Bəli, hər kursu uğurla tamamlayan tələbələrə Red Team Academy sertifikatı verilir. Həmçinin kurslarımız OSCP, CEH, eJPT kimi beynəlxalq sertifikatlara hazırlıq üçün nəzərdə tutulub.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Ödəniş necə edilir?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Bank kartı, bank köçürməsi və ya nağd ödəniş qəbul edirik. Taksit imkanı da mövcuddur - 3 və 6 aylıq taksit seçimləri var. Tələbə endirimi və erkən qeydiyyat endirimi də tətbiq olunur.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Kursdan sonra iş tapmaqda kömək edirsiniz?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Bəli, karyera dəstəyi proqramımız var. CV hazırlığı, texniki müsahibəyə hazırlıq, portfolio yaratma və partnyorlarımızdakı iş imkanları barədə məlumatlandırma xidmətlərimiz var. Alumni şəbəkəmiz vasitəsilə networking imkanları da təklif edirik.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Kursların müddəti nə qədərdir?</h3>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Kurslar 30-80 saat arasında dəyişir. Həftədə 2-3 dərs (hər dərs 2-3 saat) formatında keçirilir. Beləliklə bir kurs ümumiyyətlə 2-4 ay ərzində tamamlanır. Öz tempinizə uyğun tamamlaya bilərsiniz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması. Etik hakerlik və red team əməliyyatları üzrə kurslar.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Discord">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
