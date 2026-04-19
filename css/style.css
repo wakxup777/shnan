@@ -1772,3 +1772,590 @@ body {
     font-size: 0.8rem;
   }
 }
+
+/* ============================================
+   Registration & Payment Page
+   ============================================ */
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 50px;
+  padding: 30px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+.step-indicator .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.step-number {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.step.active .step-number {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--text-white);
+  box-shadow: var(--shadow-glow);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.step.active .step-label {
+  color: var(--text-white);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--glass-border);
+  margin: 0 10px;
+  margin-bottom: 25px;
+}
+
+/* Register Steps */
+.register-step {
+  display: none;
+}
+
+.register-step.active {
+  display: block;
+}
+
+/* Course Selection Grid */
+.course-select-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-select-card {
+  cursor: pointer;
+  display: block;
+}
+
+.course-select-card input[type="radio"] {
+  display: none;
+}
+
+.course-select-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 25px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.course-select-card input:checked + .course-select-inner {
+  border-color: var(--primary);
+  background: rgba(204, 0, 0, 0.08);
+  box-shadow: var(--shadow-glow);
+}
+
+.course-select-inner:hover {
+  border-color: var(--border-color);
+}
+
+.course-select-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.course-select-info {
+  flex: 1;
+}
+
+.course-select-info h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text-white);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.course-select-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.course-select-price {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Form Rows */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.register-form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Payment Wrapper */
+.payment-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+/* Order Summary */
+.order-summary {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 30px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.order-summary h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.order-course-name {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.order-course-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.order-divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 15px 0;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.discount-row {
+  color: var(--neon-green);
+}
+
+.order-total {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+.promo-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.promo-section label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-heading);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.promo-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.promo-input-group input {
+  flex: 1;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.promo-input-group input:focus {
+  border-color: var(--primary);
+}
+
+.promo-hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-family: var(--font-mono);
+}
+
+/* Payment Methods */
+.payment-methods {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 30px;
+}
+
+.payment-methods h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.payment-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.payment-tab {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.payment-tab:hover {
+  border-color: var(--border-color);
+}
+
+.payment-tab.active {
+  border-color: var(--primary);
+  color: var(--text-white);
+  background: rgba(204, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(204, 0, 0, 0.15);
+}
+
+.payment-form {
+  display: none;
+}
+
+.payment-form.active {
+  display: block;
+}
+
+.payment-form .form-group {
+  margin-bottom: 15px;
+}
+
+.payment-form .form-group input {
+  width: 100%;
+}
+
+.accepted-cards {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card-brand {
+  padding: 5px 14px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Bank Transfer Info */
+.bank-info-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 25px;
+}
+
+.bank-info-card h4 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--text-white);
+  margin-bottom: 15px;
+}
+
+.bank-detail {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.bank-label {
+  color: var(--text-secondary);
+  min-width: 80px;
+}
+
+.bank-value {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.bank-note {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--glass-border);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Crypto Payment */
+.crypto-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.crypto-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+
+.crypto-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.crypto-card h4 {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.crypto-address {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.crypto-address code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--neon-green);
+  word-break: break-all;
+}
+
+.crypto-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Installment Info */
+.installment-info {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+.installment-info h4 {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.installment-info p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+/* Confirmation */
+.confirmation-wrapper {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+.confirmation-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 255, 65, 0.1);
+  border: 2px solid var(--neon-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--neon-green);
+  margin: 0 auto 25px;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+.confirmation-wrapper h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--text-white);
+  margin-bottom: 15px;
+}
+
+.confirmation-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.confirmation-details {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.confirmation-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.confirmation-detail:last-child {
+  border-bottom: none;
+}
+
+.conf-label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.conf-value {
+  color: var(--text-white);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+}
+
+.confirmation-note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Registration Responsive */
+@media (max-width: 768px) {
+  .payment-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-summary {
+    position: static;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .step-indicator {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .step-line {
+    display: none;
+  }
+
+  .step-indicator .step {
+    min-width: auto;
+  }
+
+  .payment-tabs {
+    flex-direction: column;
+  }
+
+  .course-select-inner {
+    flex-wrap: wrap;
+  }
+
+  .course-select-price {
+    width: 100%;
+    text-align: left;
+  }
+}
