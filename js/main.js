@@ -463,4 +463,193 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ========== CUSTOM CURSOR & MOUSE EFFECTS ==========
+  // Only on desktop
+  if (window.innerWidth > 768) {
+    document.body.classList.add('custom-cursor-active');
+    
+    // Create cursor elements
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+    
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    document.body.appendChild(cursorDot);
+    
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let trailCounter = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Cursor dot follows immediately
+      cursorDot.style.left = mouseX - 3 + 'px';
+      cursorDot.style.top = mouseY - 3 + 'px';
+      
+      // Trail particles (every 3rd move)
+      trailCounter++;
+      if (trailCounter % 3 === 0) {
+        createTrailParticle(mouseX, mouseY);
+      }
+    });
+    
+    // Smooth cursor follow
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      
+      cursor.style.left = cursorX - 10 + 'px';
+      cursor.style.top = cursorY - 10 + 'px';
+      
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    
+    // Hover effect on interactive elements
+    const interactives = document.querySelectorAll('a, button, input, select, textarea, .feature-card, .course-card, .team-card, .course-select-card, .faq-question, .contact-info-card, .value-card');
+    
+    interactives.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+    
+    // Click effect
+    document.addEventListener('mousedown', () => {
+      cursor.classList.add('click');
+      createRipple(mouseX, mouseY);
+    });
+    document.addEventListener('mouseup', () => cursor.classList.remove('click'));
+    
+    // Trail particle
+    function createTrailParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'trail-particle';
+      
+      // Random color between red, green, cyan
+      const colors = ['rgba(204, 0, 0, 0.6)', 'rgba(0, 255, 65, 0.4)', 'rgba(0, 255, 204, 0.3)'];
+      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.left = x - 2 + 'px';
+      particle.style.top = y - 2 + 'px';
+      particle.style.boxShadow = '0 0 6px ' + particle.style.background;
+      
+      document.body.appendChild(particle);
+      
+      setTimeout(() => particle.remove(), 800);
+    }
+    
+    // Ripple on click
+    function createRipple(x, y) {
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-effect';
+      ripple.style.left = x - 10 + 'px';
+      ripple.style.top = y - 10 + 'px';
+      ripple.style.width = '20px';
+      ripple.style.height = '20px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    }
+
+    // Magnetic effect on buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  // ========== USER PERSISTENCE (localStorage) ==========
+  const UserManager = {
+    STORAGE_KEY: 'redteam_user',
+    
+    save(userData) {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(userData));
+    },
+    
+    get() {
+      const data = localStorage.getItem(this.STORAGE_KEY);
+      return data ? JSON.parse(data) : null;
+    },
+    
+    remove() {
+      localStorage.removeItem(this.STORAGE_KEY);
+    },
+    
+    isLoggedIn() {
+      return this.get() !== null;
+    },
+    
+    getInitials(user) {
+      if (!user) return '??';
+      const f = user.name ? user.name[0] : '';
+      const l = user.surname ? user.surname[0] : '';
+      return (f + l).toUpperCase();
+    }
+  };
+
+  // Update navbar based on login state
+  function updateNavbar() {
+    const user = UserManager.get();
+    const navCta = document.querySelector('.nav-cta');
+    
+    if (!navCta) return;
+    
+    if (user && user.name) {
+      // Replace CTA with user profile
+      const dropdown = document.createElement('div');
+      dropdown.className = 'user-dropdown';
+      dropdown.innerHTML = `
+        <div class="user-profile-btn">
+          <div class="user-avatar-sm">${UserManager.getInitials(user)}</div>
+          <span class="user-name-sm">${user.name}</span>
+        </div>
+        <div class="user-dropdown-menu">
+          <div class="dropdown-header">
+            <div class="user-fullname">${user.name} ${user.surname || ''}</div>
+            <div class="user-email">${user.email || ''}</div>
+          </div>
+          <a href="register.html" class="dropdown-item">📚 Kurslarım</a>
+          <a href="register.html" class="dropdown-item">⚙️ Profil Ayarları</a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item danger" id="logoutBtn">🚪 Çıxış</a>
+        </div>
+      `;
+      
+      navCta.replaceWith(dropdown);
+      
+      // Toggle dropdown
+      const profileBtn = dropdown.querySelector('.user-profile-btn');
+      profileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+      });
+      
+      // Close on outside click
+      document.addEventListener('click', () => {
+        dropdown.classList.remove('active');
+      });
+      
+      // Logout
+      const logoutBtn = dropdown.querySelector('#logoutBtn');
+      logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        UserManager.remove();
+        window.location.reload();
+      });
+    }
+  }
+  
+  updateNavbar();
+
+  // Make UserManager globally accessible for register.html
+  window.UserManager = UserManager;
+
 });

@@ -569,6 +569,27 @@
       }
 
       if (currentStep === 3) {
+        // Save user to localStorage
+        const userData = {
+          name: document.getElementById('regName').value.trim(),
+          surname: document.getElementById('regSurname').value.trim(),
+          email: document.getElementById('regEmail').value.trim(),
+          phone: document.getElementById('regPhone').value.trim(),
+          country: document.getElementById('regCountry').value,
+          experience: document.getElementById('regExperience').value,
+          course: selectedCourse,
+          coursePrice: selectedPrice,
+          discount: discount,
+          registeredAt: new Date().toISOString()
+        };
+        
+        // Save via UserManager (from main.js)
+        if (window.UserManager) {
+          window.UserManager.save(userData);
+        } else {
+          localStorage.setItem('redteam_user', JSON.stringify(userData));
+        }
+        
         // Set confirmation details
         document.getElementById('confCourse').textContent = selectedCourse;
         const total = selectedPrice - (selectedPrice * discount / 100);
@@ -630,6 +651,20 @@
         alert('Yanlış promo kod!');
       }
     }
+
+    // Auto-fill from saved user data
+    (function autoFillFromStorage() {
+      const saved = localStorage.getItem('redteam_user');
+      if (saved) {
+        const user = JSON.parse(saved);
+        if (user.name) document.getElementById('regName').value = user.name;
+        if (user.surname) document.getElementById('regSurname').value = user.surname;
+        if (user.email) document.getElementById('regEmail').value = user.email;
+        if (user.phone) document.getElementById('regPhone').value = user.phone;
+        if (user.country) document.getElementById('regCountry').value = user.country;
+        if (user.experience) document.getElementById('regExperience').value = user.experience;
+      }
+    })();
 
     function switchPayment(method) {
       document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
