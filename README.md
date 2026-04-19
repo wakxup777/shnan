@@ -1,69 +1,48 @@
 # Red Team Academy
 
-A cybersecurity training academy website focused on Red Team operations, ethical hacking, and offensive security.
-
-## Overview
-
-Red Team Academy is a professional cybersecurity training platform offering courses in:
-- Ethical Hacking Fundamentals
-- Network Penetration Testing
-- Web Application Security
-- Social Engineering & OSINT
-- Malware Analysis
-- Active Directory Attacks
-- Wireless Network Hacking
-- Red Team Operations
-- Exploit Development
-- Incident Response
-
-## Tech Stack
-
-- **HTML5** - Semantic markup
-- **CSS3** - Custom properties, Flexbox, Grid, animations, responsive design
-- **JavaScript** - Vanilla JS, no frameworks
-- **Google Fonts** - Orbitron, Inter, Fira Code
+A professional cybersecurity training platform website built with vanilla HTML, CSS, and JavaScript. Features a dark hacker/cybersecurity theme with Matrix rain effects, terminal animations, and glassmorphism design.
 
 ## Pages
 
-| Page | File | Description |
-|------|------|-------------|
-| Home | `index.html` | Hero section, features, course preview, stats, CTA |
-| Courses | `courses.html` | Full course catalog with category filters |
-| About | `about.html` | Mission, timeline, team, values |
-| Contact | `contact.html` | Contact form, info cards, FAQ accordion |
+- **index.html** - Home page with hero section, features, course previews, stats, testimonials
+- **courses.html** - Full course catalog with filtering (beginner/intermediate/advanced)
+- **about.html** - About page with mission/vision, team, timeline, certifications, partners
+- **blog.html** - Cybersecurity blog with featured posts and article grid
+- **resources.html** - Red Team tools, practice platforms, books, and cheat sheets
+- **contact.html** - Contact form, FAQ section, and contact information
+- **register.html** - Multi-step registration with course selection and payment
+- **dashboard.html** - Student dashboard with progress tracking
 
-## Design
+## Features
 
-- Dark theme with red/neon accents (cybersecurity aesthetic)
-- Glassmorphism cards with backdrop blur
-- Terminal-style hero section with typing animation
-- Smooth scroll animations (Intersection Observer)
-- Fully responsive (mobile, tablet, desktop)
-- Neon glow effects and gradient accents
+- Dark cybersecurity theme with red/green/cyan accent colors
+- Matrix rain background animation (canvas-based)
+- Terminal/console-style UI elements
+- Loading screen with hacker-style progress
+- Smooth scroll animations and fade-in effects
+- Responsive design for all screen sizes
+- Course filtering system
+- Multi-step registration flow with payment options
+- Student dashboard with progress tracking
+- FAQ accordion
+- Typing text animations
 
-## File Structure
+## Tech Stack
 
-```
-shnan/
-  index.html
-  courses.html
-  about.html
-  contact.html
-  css/
-    style.css
-  js/
-    main.js
-  README.md
-```
+- Pure HTML5, CSS3, JavaScript (no frameworks)
+- Google Fonts: Orbitron, Inter, Fira Code
+- CSS Grid & Flexbox layouts
+- CSS custom properties (variables)
+- Canvas API for Matrix rain effect
+- LocalStorage for user data persistence
 
 ## Getting Started
 
-Simply open `index.html` in a browser. No build tools or dependencies required.
+Simply open `index.html` in a browser. No build tools or server required.
 
 ```bash
-# Or use a local server
-python3 -m http.server 8000
-# Then open http://localhost:8000
+# Or use a simple HTTP server
+python3 -m http.server 8080
 ```
 
 ## License
