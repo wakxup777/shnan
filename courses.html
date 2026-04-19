@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurslar | Red Team Academy</title>
+  <meta name="description" content="Red Team Academy kursları - Ethical Hacking, Penetration Testing, Web Security, Red Team Operations və daha çox.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Səhifə</a>
+        <a href="courses.html" class="active">Kurslar</a>
+        <a href="about.html">Haqqımızda</a>
+        <a href="contact.html">Əlaqə</a>
+        <a href="courses.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Kurslarımız</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Səhifə</a>
+        <span class="separator">/</span>
+        <span class="current">Kurslar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COURSES SECTION ========== -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div class="course-filters fade-in">
+        <button class="filter-btn active" data-filter="all">Hamısı</button>
+        <button class="filter-btn" data-filter="beginner">Başlanğıc</button>
+        <button class="filter-btn" data-filter="intermediate">Orta</button>
+        <button class="filter-btn" data-filter="advanced">Qabaqcıl</button>
+      </div>
+
+      <!-- Courses Grid -->
+      <div class="courses-grid" id="coursesGrid">
+
+        <!-- Course 1 -->
+        <div class="course-card fade-in" data-category="beginner">
+          <div class="course-image">🔐</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-beginner">Başlanğıc</span>
+              <span class="course-duration">⏱ 40 saat</span>
+            </div>
+            <h3>Ethical Hacking Fundamentals</h3>
+            <p>Etik hakerliyin əsasları. Linux, networking, reconnaissance və ilk hücum texnikaları ilə tanışlıq.</p>
+            <div class="course-footer">
+              <span class="course-price">Pulsuz</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card fade-in" data-category="intermediate">
+          <div class="course-image">🌐</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-intermediate">Orta</span>
+              <span class="course-duration">⏱ 55 saat</span>
+            </div>
+            <h3>Network Penetration Testing</h3>
+            <p>Şəbəkə skanlaması, servis enumeration, exploitation və post-exploitation texnikaları.</p>
+            <div class="course-footer">
+              <span class="course-price">$149</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card fade-in" data-category="intermediate">
+          <div class="course-image">🕸️</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-intermediate">Orta</span>
+              <span class="course-duration">⏱ 60 saat</span>
+            </div>
+            <h3>Web Application Security</h3>
+            <p>OWASP Top 10, SQL Injection, XSS, CSRF, SSRF, file upload zəiflikləri və Burp Suite ilə iş.</p>
+            <div class="course-footer">
+              <span class="course-price">$199</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card fade-in" data-category="beginner">
+          <div class="course-image">🎭</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-beginner">Başlanğıc</span>
+              <span class="course-duration">⏱ 30 saat</span>
+            </div>
+            <h3>Social Engineering & OSINT</h3>
+            <p>Açıq mənbə kəşfiyyatı, phishing kampaniyaları, pretexting və insan faktoruna əsaslanan hücumlar.</p>
+            <div class="course-footer">
+              <span class="course-price">$99</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 -->
+        <div class="course-card fade-in" data-category="advanced">
+          <div class="course-image">🦠</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-advanced">Qabaqcıl</span>
+              <span class="course-duration">⏱ 70 saat</span>
+            </div>
+            <h3>Malware Analysis</h3>
+            <p>Statik və dinamik analiz, reverse engineering, sandboxing və zərərli proqramların davranış analizi.</p>
+            <div class="course-footer">
+              <span class="course-price">$299</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 6 -->
+        <div class="course-card fade-in" data-category="advanced">
+          <div class="course-image">🏢</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-advanced">Qabaqcıl</span>
+              <span class="course-duration">⏱ 65 saat</span>
+            </div>
+            <h3>Active Directory Attacks</h3>
+            <p>AD enumeration, Kerberoasting, Pass-the-Hash, Golden Ticket və domain dominance texnikaları.</p>
+            <div class="course-footer">
+              <span class="course-price">$279</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 7 -->
+        <div class="course-card fade-in" data-category="intermediate">
+          <div class="course-image">📡</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-intermediate">Orta</span>
+              <span class="course-duration">⏱ 45 saat</span>
+            </div>
+            <h3>Wireless Network Hacking</h3>
+            <p>WiFi protokolları, WPA/WPA2 hücumları, evil twin, deauthentication və Bluetooth hacking.</p>
+            <div class="course-footer">
+              <span class="course-price">$179</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 8 -->
+        <div class="course-card fade-in" data-category="advanced">
+          <div class="course-image">⚔️</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-advanced">Qabaqcıl</span>
+              <span class="course-duration">⏱ 80 saat</span>
+            </div>
+            <h3>Red Team Operations</h3>
+            <p>Tam red team əməliyyatları. C2 frameworks, evasion, persistence, lateral movement və APT simulyasiyası.</p>
+            <div class="course-footer">
+              <span class="course-price">$349</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 9 -->
+        <div class="course-card fade-in" data-category="advanced">
+          <div class="course-image">🧬</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-advanced">Qabaqcıl</span>
+              <span class="course-duration">⏱ 75 saat</span>
+            </div>
+            <h3>Exploit Development</h3>
+            <p>Buffer overflow, shellcode yazma, ROP chains, heap exploitation və fuzzing texnikaları.</p>
+            <div class="course-footer">
+              <span class="course-price">$329</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 10 -->
+        <div class="course-card fade-in" data-category="beginner">
+          <div class="course-image">🛡️</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-beginner">Başlanğıc</span>
+              <span class="course-duration">⏱ 35 saat</span>
+            </div>
+            <h3>Incident Response</h3>
+            <p>Hadisə cavablama prosesi, digital forensics əsasları, log analizi və threat hunting giriş.</p>
+            <div class="course-footer">
+              <span class="course-price">$129</span>
+              <a href="#" class="course-link">Qeydiyyat →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="section cta-section">
+    <div class="container fade-in">
+      <h2>Hansı Kursu Seçəcəyinizi<br>Bilmirsiniz?</h2>
+      <p>Bizimlə əlaqə saxlayın, sizə uyğun kurs tapaq. Pulsuz konsultasiya.</p>
+      <a href="contact.html" class="btn btn-primary">Konsultasiya Al →</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması. Etik hakerlik və red team əməliyyatları üzrə kurslar.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Discord">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

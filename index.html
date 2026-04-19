@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Team Academy | Cybersecurity Training</title>
+  <meta name="description" content="Red Team Academy - Professional cybersecurity training. Ethical hacking, penetration testing, and red team operations courses.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Ana Səhifə</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="about.html">Haqqımızda</a>
+        <a href="contact.html">Əlaqə</a>
+        <a href="courses.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Yeni kurslar artıq mövcuddur</span>
+        </div>
+        <h1>
+          <span class="highlight">Red Team</span><br>
+          Academy
+        </h1>
+        <div class="typing-wrapper">
+          <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-description">
+          Kibertəhlükəsizlik sahəsində peşəkar hazırlıq. Etik hakerlik, penetration testing
+          və red team əməliyyatları üzrə praktik kurslar. Sıfırdan mütəxəssisə qədər.
+        </p>
+        <div class="hero-buttons">
+          <a href="courses.html" class="btn btn-primary">Kurslara Bax →</a>
+          <a href="about.html" class="btn btn-outline">Daha Çox</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number"><span data-count="500">0</span><span>+</span></div>
+            <div class="stat-label">Tələbə</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number"><span data-count="10">0</span><span>+</span></div>
+            <div class="stat-label">Kurs</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number"><span data-count="95">0</span><span>%</span></div>
+            <div class="stat-label">Məmnuniyyət</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <div class="terminal-title">redteam@academy:~</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">┌──(</span><span class="terminal-error">redteam</span><span class="terminal-prompt">㉿</span><span class="terminal-error">academy</span><span class="terminal-prompt">)-[</span><span class="terminal-command">~</span><span class="terminal-prompt">]</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">└─$ </span><span class="terminal-command">nmap -sV target.com</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">Starting Nmap scan...</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">PORT&nbsp;&nbsp;&nbsp;&nbsp;STATE&nbsp;&nbsp;SERVICE</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-success">22/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssh</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-success">80/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;http</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-error">443/tcp open&nbsp;&nbsp;&nbsp;https</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">Nmap done: 1 host up</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">└─$ </span><span class="terminal-command" id="terminalTyping"></span><span class="cursor">|</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Nə Öyrədirik</h2>
+        <div class="accent-line"></div>
+        <p>Red Team əməliyyatlarının əsas sahələrini əhatə edən geniş təlim proqramı</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🔓</div>
+          <h3>Penetration Testing</h3>
+          <p>Sistemlərin və şəbəkələrin zəif nöqtələrini tapın və istismar edin. Real dünya ssenariləri ilə praktik təcrübə.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🎭</div>
+          <h3>Social Engineering</h3>
+          <p>İnsan faktorunu hədəfləyən hücum texnikalarını öyrənin. Phishing, pretexting və daha çoxu.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💻</div>
+          <h3>Exploit Development</h3>
+          <p>Zəiflikləri tapmaq və exploit yazmaq bacarıqları. Buffer overflow, shellcode və reverse engineering.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🌐</div>
+          <h3>Network Security</h3>
+          <p>Şəbəkə arxitekturası, protokollar və hücum vektorları. Wireless hacking və man-in-the-middle hücumlar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COURSES PREVIEW ========== -->
+  <section class="section" id="courses-preview">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Populyar Kurslar</h2>
+        <div class="accent-line"></div>
+        <p>Ən çox seçilən red team təlim proqramlarımız</p>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card fade-in">
+          <div class="course-image">🔐</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-beginner">Başlanğıc</span>
+              <span class="course-duration">⏱ 40 saat</span>
+            </div>
+            <h3>Ethical Hacking Fundamentals</h3>
+            <p>Etik hakerliyin əsasları, alətlər, metodologiyalar və ilk addımlarınız.</p>
+            <div class="course-footer">
+              <span class="course-price">Pulsuz</span>
+              <a href="courses.html" class="course-link">Ətraflı →</a>
+            </div>
+          </div>
+        </div>
+        <div class="course-card fade-in">
+          <div class="course-image">🕸️</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-intermediate">Orta</span>
+              <span class="course-duration">⏱ 60 saat</span>
+            </div>
+            <h3>Web Application Security</h3>
+            <p>OWASP Top 10, SQL injection, XSS, CSRF və web app hücum texnikaları.</p>
+            <div class="course-footer">
+              <span class="course-price">$199</span>
+              <a href="courses.html" class="course-link">Ətraflı →</a>
+            </div>
+          </div>
+        </div>
+        <div class="course-card fade-in">
+          <div class="course-image">⚔️</div>
+          <div class="course-body">
+            <div class="course-meta">
+              <span class="course-level level-advanced">Qabaqcıl</span>
+              <span class="course-duration">⏱ 80 saat</span>
+            </div>
+            <h3>Red Team Operations</h3>
+            <p>Tam red team əməliyyatları, C2 frameworks, evasion texnikaları və APT simulyasiyası.</p>
+            <div class="course-footer">
+              <span class="course-price">$349</span>
+              <a href="courses.html" class="course-link">Ətraflı →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 50px;" class="fade-in">
+        <a href="courses.html" class="btn btn-outline">Bütün Kurslara Bax →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS SECTION ========== -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <div class="stat-icon">👨‍💻</div>
+          <div class="stat-number"><span class="counter" data-target="500">0</span><span class="counter-suffix">+</span></div>
+          <div class="stat-label">Tələbə</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-icon">📚</div>
+          <div class="stat-number"><span class="counter" data-target="10">0</span><span class="counter-suffix">+</span></div>
+          <div class="stat-label">Kurs</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-number"><span class="counter" data-target="350">0</span><span class="counter-suffix">+</span></div>
+          <div class="stat-label">Sertifikat</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-number"><span class="counter" data-target="15">0</span><span class="counter-suffix">+</span></div>
+          <div class="stat-label">Ölkə</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="section cta-section" id="cta">
+    <div class="container fade-in">
+      <h2>Kibertəhlükəsizlik Karyeranıza<br>Bugün Başlayın</h2>
+      <p>Red Team Academy ilə professional kibertəhlükəsizlik mütəxəssisi olun. Praktik təlim, real layihələr.</p>
+      <a href="contact.html" class="btn btn-primary">Bizimlə Əlaqə →</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması. Etik hakerlik və red team əməliyyatları üzrə kurslar.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Discord">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
