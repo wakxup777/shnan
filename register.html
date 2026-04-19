@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qeydiyyat & Ödəniş | Red Team Academy</title>
+  <meta name="description" content="Red Team Academy kurslara qeydiyyat və ödəniş səhifəsi.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Səhifə</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="about.html">Haqqımızda</a>
+        <a href="contact.html">Əlaqə</a>
+        <a href="register.html" class="nav-cta active">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="glitch-text">Qeydiyyat & Ödəniş</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Səhifə</a>
+        <span class="separator">/</span>
+        <span class="current">Qeydiyyat</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REGISTRATION SECTION ========== -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="register-wrapper">
+
+        <!-- Step Indicator -->
+        <div class="step-indicator fade-in">
+          <div class="step active" data-step="1">
+            <div class="step-number">1</div>
+            <div class="step-label">Kurs Seçimi</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2">
+            <div class="step-number">2</div>
+            <div class="step-label">Şəxsi Məlumat</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3">
+            <div class="step-number">3</div>
+            <div class="step-label">Ödəniş</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="4">
+            <div class="step-number">4</div>
+            <div class="step-label">Təsdiq</div>
+          </div>
+        </div>
+
+        <!-- Step 1: Course Selection -->
+        <div class="register-step active" id="step1">
+          <div class="section-header fade-in" style="margin-bottom: 40px;">
+            <h2>Kurs Seçin</h2>
+            <div class="accent-line"></div>
+            <p>Qeydiyyat olmaq istədiyiniz kursu seçin</p>
+          </div>
+
+          <div class="course-select-grid">
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="ethical-hacking" data-price="0" data-name="Ethical Hacking Fundamentals">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🔐</div>
+                <div class="course-select-info">
+                  <h3>Ethical Hacking Fundamentals</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-beginner">Başlanğıc</span>
+                    <span>⏱ 40 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">Pulsuz</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="network-pentest" data-price="149" data-name="Network Penetration Testing">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🌐</div>
+                <div class="course-select-info">
+                  <h3>Network Penetration Testing</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-intermediate">Orta</span>
+                    <span>⏱ 55 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$149</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="web-security" data-price="199" data-name="Web Application Security">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🕸️</div>
+                <div class="course-select-info">
+                  <h3>Web Application Security</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-intermediate">Orta</span>
+                    <span>⏱ 60 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$199</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="social-engineering" data-price="99" data-name="Social Engineering & OSINT">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🎭</div>
+                <div class="course-select-info">
+                  <h3>Social Engineering & OSINT</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-beginner">Başlanğıc</span>
+                    <span>⏱ 30 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$99</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="malware-analysis" data-price="299" data-name="Malware Analysis">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🦠</div>
+                <div class="course-select-info">
+                  <h3>Malware Analysis</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-advanced">Qabaqcıl</span>
+                    <span>⏱ 70 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$299</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="ad-attacks" data-price="279" data-name="Active Directory Attacks">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🏢</div>
+                <div class="course-select-info">
+                  <h3>Active Directory Attacks</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-advanced">Qabaqcıl</span>
+                    <span>⏱ 65 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$279</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="wireless-hacking" data-price="179" data-name="Wireless Network Hacking">
+              <div class="course-select-inner">
+                <div class="course-select-icon">📡</div>
+                <div class="course-select-info">
+                  <h3>Wireless Network Hacking</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-intermediate">Orta</span>
+                    <span>⏱ 45 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$179</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="red-team-ops" data-price="349" data-name="Red Team Operations">
+              <div class="course-select-inner">
+                <div class="course-select-icon">⚔️</div>
+                <div class="course-select-info">
+                  <h3>Red Team Operations</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-advanced">Qabaqcıl</span>
+                    <span>⏱ 80 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$349</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="exploit-dev" data-price="329" data-name="Exploit Development">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🧬</div>
+                <div class="course-select-info">
+                  <h3>Exploit Development</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-advanced">Qabaqcıl</span>
+                    <span>⏱ 75 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$329</div>
+              </div>
+            </label>
+
+            <label class="course-select-card fade-in">
+              <input type="radio" name="course" value="incident-response" data-price="129" data-name="Incident Response">
+              <div class="course-select-inner">
+                <div class="course-select-icon">🛡️</div>
+                <div class="course-select-info">
+                  <h3>Incident Response</h3>
+                  <div class="course-select-meta">
+                    <span class="course-level level-beginner">Başlanğıc</span>
+                    <span>⏱ 35 saat</span>
+                  </div>
+                </div>
+                <div class="course-select-price">$129</div>
+              </div>
+            </label>
+          </div>
+
+          <div style="text-align: center; margin-top: 40px;">
+            <button class="btn btn-primary" onclick="nextStep(2)">Davam Et →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Personal Info -->
+        <div class="register-step" id="step2">
+          <div class="section-header fade-in" style="margin-bottom: 40px;">
+            <h2>Şəxsi Məlumatlar</h2>
+            <div class="accent-line"></div>
+            <p>Qeydiyyat üçün məlumatlarınızı daxil edin</p>
+          </div>
+
+          <div class="register-form-wrapper fade-in">
+            <form class="register-form" id="registerForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="regName">Ad</label>
+                  <input type="text" id="regName" placeholder="Adınız" required>
+                </div>
+                <div class="form-group">
+                  <label for="regSurname">Soyad</label>
+                  <input type="text" id="regSurname" placeholder="Soyadınız" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="regEmail">Email</label>
+                  <input type="email" id="regEmail" placeholder="email@numune.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="regPhone">Telefon</label>
+                  <input type="tel" id="regPhone" placeholder="+994 50 XXX XX XX" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="regCountry">Ölkə</label>
+                <select id="regCountry" required>
+                  <option value="" disabled selected>Ölkə seçin</option>
+                  <option value="AZ">Azərbaycan</option>
+                  <option value="TR">Türkiyə</option>
+                  <option value="RU">Rusiya</option>
+                  <option value="GE">Gürcüstan</option>
+                  <option value="US">ABŞ</option>
+                  <option value="UK">Böyük Britaniya</option>
+                  <option value="DE">Almaniya</option>
+                  <option value="OTHER">Digər</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="regExperience">Təcrübə Səviyyəsi</label>
+                <select id="regExperience" required>
+                  <option value="" disabled selected>Səviyyə seçin</option>
+                  <option value="none">Heç bir təcrübəm yoxdur</option>
+                  <option value="beginner">Başlanğıc (0-1 il)</option>
+                  <option value="intermediate">Orta (1-3 il)</option>
+                  <option value="advanced">Qabaqcıl (3+ il)</option>
+                  <option value="professional">Professional (5+ il)</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 15px;">
+            <button class="btn btn-outline" onclick="prevStep(1)">← Geri</button>
+            <button class="btn btn-primary" onclick="nextStep(3)">Ödənişə Keç →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="register-step" id="step3">
+          <div class="section-header fade-in" style="margin-bottom: 40px;">
+            <h2>Ödəniş</h2>
+            <div class="accent-line"></div>
+            <p>Ödəniş məlumatlarınızı daxil edin</p>
+          </div>
+
+          <div class="payment-wrapper fade-in">
+            <!-- Order Summary -->
+            <div class="order-summary">
+              <h3>Sifariş Xülasəsi</h3>
+              <div class="order-item">
+                <span class="order-course-name" id="orderCourseName">Kurs seçilməyib</span>
+                <span class="order-course-price" id="orderCoursePrice">$0</span>
+              </div>
+              <div class="order-divider"></div>
+              <div class="order-row">
+                <span>Alt cəm</span>
+                <span id="orderSubtotal">$0</span>
+              </div>
+              <div class="order-row discount-row" id="discountRow" style="display: none;">
+                <span>Endirim (<span id="discountPercent">0</span>%)</span>
+                <span id="discountAmount">-$0</span>
+              </div>
+              <div class="order-divider"></div>
+              <div class="order-row order-total">
+                <span>Cəmi</span>
+                <span id="orderTotal">$0</span>
+              </div>
+
+              <!-- Promo Code -->
+              <div class="promo-section">
+                <label>Promo Kod</label>
+                <div class="promo-input-group">
+                  <input type="text" id="promoCode" placeholder="Promo kod daxil edin">
+                  <button class="btn btn-outline" onclick="applyPromo()" style="padding: 10px 16px; font-size: 0.8rem;">Tətbiq Et</button>
+                </div>
+                <p class="promo-hint">Test promo: REDTEAM20 (20% endirim)</p>
+              </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+              <h3>Ödəniş Üsulu</h3>
+
+              <div class="payment-tabs">
+                <button class="payment-tab active" data-method="card" onclick="switchPayment('card')">💳 Kart</button>
+                <button class="payment-tab" data-method="bank" onclick="switchPayment('bank')">🏦 Bank</button>
+                <button class="payment-tab" data-method="crypto" onclick="switchPayment('crypto')">₿ Kripto</button>
+              </div>
+
+              <!-- Card Payment -->
+              <div class="payment-form active" id="payment-card">
+                <div class="form-group">
+                  <label>Kart Nömrəsi</label>
+                  <input type="text" id="cardNumber" placeholder="4242 4242 4242 4242" maxlength="19">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Son İstifadə</label>
+                    <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+                  </div>
+                  <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Kart Sahibinin Adı</label>
+                  <input type="text" id="cardName" placeholder="AD SOYAD">
+                </div>
+                <div class="accepted-cards">
+                  <span class="card-brand">VISA</span>
+                  <span class="card-brand">MC</span>
+                  <span class="card-brand">AMEX</span>
+                </div>
+              </div>
+
+              <!-- Bank Transfer -->
+              <div class="payment-form" id="payment-bank">
+                <div class="bank-info-card">
+                  <h4>Bank Köçürməsi Məlumatları</h4>
+                  <div class="bank-detail">
+                    <span class="bank-label">Bank:</span>
+                    <span class="bank-value">Kapital Bank</span>
+                  </div>
+                  <div class="bank-detail">
+                    <span class="bank-label">Hesab:</span>
+                    <span class="bank-value">AZ12 KAPI 0000 0000 0000 0001</span>
+                  </div>
+                  <div class="bank-detail">
+                    <span class="bank-label">Alıcı:</span>
+                    <span class="bank-value">Red Team Academy MMC</span>
+                  </div>
+                  <div class="bank-detail">
+                    <span class="bank-label">SWIFT:</span>
+                    <span class="bank-value">AIIBAZ2X</span>
+                  </div>
+                  <div class="bank-detail">
+                    <span class="bank-label">Təyinat:</span>
+                    <span class="bank-value" id="bankRef">Kurs ödənişi - [Ad Soyad]</span>
+                  </div>
+                  <p class="bank-note">Köçürmə etdikdən sonra qəbzi info@redteamacademy.az ünvanına göndərin. 24 saat ərzində təsdiq ediləcək.</p>
+                </div>
+              </div>
+
+              <!-- Crypto Payment -->
+              <div class="payment-form" id="payment-crypto">
+                <div class="crypto-options">
+                  <div class="crypto-card">
+                    <div class="crypto-icon">₿</div>
+                    <h4>Bitcoin (BTC)</h4>
+                    <div class="crypto-address">
+                      <code>bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</code>
+                    </div>
+                    <button class="btn btn-outline" onclick="copyAddress(this)" style="padding: 8px 16px; font-size: 0.8rem; margin-top: 10px;">Kopyala</button>
+                  </div>
+                  <div class="crypto-card">
+                    <div class="crypto-icon">Ξ</div>
+                    <h4>Ethereum (ETH)</h4>
+                    <div class="crypto-address">
+                      <code>0x71C7656EC7ab88b098defB751B7401B5f6d8976F</code>
+                    </div>
+                    <button class="btn btn-outline" onclick="copyAddress(this)" style="padding: 8px 16px; font-size: 0.8rem; margin-top: 10px;">Kopyala</button>
+                  </div>
+                  <div class="crypto-card">
+                    <div class="crypto-icon">◎</div>
+                    <h4>USDT (TRC-20)</h4>
+                    <div class="crypto-address">
+                      <code>TN2Y3cZpTGbJvNZ9VFMnCKpAdeFyGRcFTi</code>
+                    </div>
+                    <button class="btn btn-outline" onclick="copyAddress(this)" style="padding: 8px 16px; font-size: 0.8rem; margin-top: 10px;">Kopyala</button>
+                  </div>
+                </div>
+                <p class="crypto-note">Kripto ödəniş etdikdən sonra transaction hash-i info@redteamacademy.az ünvanına göndərin.</p>
+              </div>
+
+              <!-- Installment Info -->
+              <div class="installment-info">
+                <h4>💳 Taksit İmkanı</h4>
+                <p>3 aylıq taksit - əlavə faiz yoxdur</p>
+                <p>6 aylıq taksit - 5% əlavə</p>
+                <p>12 aylıq taksit - 10% əlavə</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 15px;">
+            <button class="btn btn-outline" onclick="prevStep(2)">← Geri</button>
+            <button class="btn btn-primary" onclick="nextStep(4)">Ödənişi Təsdiqlə →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="register-step" id="step4">
+          <div class="confirmation-wrapper fade-in">
+            <div class="confirmation-icon">✓</div>
+            <h2 class="glitch-text">Qeydiyyat Tamamlandı!</h2>
+            <p class="confirmation-text">Təbrik edirik! Qeydiyyatınız uğurla tamamlandı.</p>
+            <div class="confirmation-details">
+              <div class="confirmation-detail">
+                <span class="conf-label">Kurs:</span>
+                <span class="conf-value" id="confCourse">-</span>
+              </div>
+              <div class="confirmation-detail">
+                <span class="conf-label">Ödəniş:</span>
+                <span class="conf-value" id="confPayment">-</span>
+              </div>
+              <div class="confirmation-detail">
+                <span class="conf-label">Status:</span>
+                <span class="conf-value" style="color: var(--neon-green);">Aktiv</span>
+              </div>
+            </div>
+            <p class="confirmation-note">Təsdiq emaili göndərildi. Kurs girişi 24 saat ərzində aktivləşdiriləcək.</p>
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 15px;">
+              <a href="courses.html" class="btn btn-outline">Kurslara Bax</a>
+              <a href="index.html" class="btn btn-primary">Ana Səhifə →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması. Etik hakerlik və red team əməliyyatları üzrə kurslar.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="LinkedIn">LI</a>
+            <a href="#" aria-label="Discord">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // ========== REGISTRATION MULTI-STEP ==========
+    let currentStep = 1;
+    let selectedCourse = null;
+    let selectedPrice = 0;
+    let discount = 0;
+
+    function nextStep(step) {
+      // Validation
+      if (currentStep === 1) {
+        const selected = document.querySelector('input[name="course"]:checked');
+        if (!selected) {
+          alert('Zəhmət olmasa kurs seçin!');
+          return;
+        }
+        selectedCourse = selected.getAttribute('data-name');
+        selectedPrice = parseInt(selected.getAttribute('data-price'));
+        updateOrderSummary();
+      }
+
+      if (currentStep === 2) {
+        const name = document.getElementById('regName').value.trim();
+        const surname = document.getElementById('regSurname').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        if (!name || !surname || !email) {
+          alert('Zəhmət olmasa bütün sahələri doldurun!');
+          return;
+        }
+      }
+
+      if (currentStep === 3) {
+        // Set confirmation details
+        document.getElementById('confCourse').textContent = selectedCourse;
+        const total = selectedPrice - (selectedPrice * discount / 100);
+        document.getElementById('confPayment').textContent = total === 0 ? 'Pulsuz' : '$' + total.toFixed(0);
+      }
+
+      // Hide current step
+      document.getElementById('step' + currentStep).classList.remove('active');
+      // Show next step
+      document.getElementById('step' + step).classList.add('active');
+
+      // Update step indicator
+      document.querySelectorAll('.step-indicator .step').forEach(s => {
+        const sNum = parseInt(s.getAttribute('data-step'));
+        if (sNum <= step) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+
+      currentStep = step;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevStep(step) {
+      document.getElementById('step' + currentStep).classList.remove('active');
+      document.getElementById('step' + step).classList.add('active');
+      currentStep = step;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateOrderSummary() {
+      document.getElementById('orderCourseName').textContent = selectedCourse;
+      document.getElementById('orderCoursePrice').textContent = selectedPrice === 0 ? 'Pulsuz' : '$' + selectedPrice;
+      document.getElementById('orderSubtotal').textContent = selectedPrice === 0 ? 'Pulsuz' : '$' + selectedPrice;
+
+      const total = selectedPrice - (selectedPrice * discount / 100);
+      document.getElementById('orderTotal').textContent = total === 0 ? 'Pulsuz' : '$' + total.toFixed(0);
+
+      if (discount > 0) {
+        document.getElementById('discountRow').style.display = 'flex';
+        document.getElementById('discountPercent').textContent = discount;
+        document.getElementById('discountAmount').textContent = '-$' + (selectedPrice * discount / 100).toFixed(0);
+      }
+    }
+
+    function applyPromo() {
+      const code = document.getElementById('promoCode').value.trim().toUpperCase();
+      if (code === 'REDTEAM20') {
+        discount = 20;
+        updateOrderSummary();
+        alert('Promo kod tətbiq edildi! 20% endirim.');
+      } else if (code === 'HACK50') {
+        discount = 50;
+        updateOrderSummary();
+        alert('Promo kod tətbiq edildi! 50% endirim.');
+      } else {
+        alert('Yanlış promo kod!');
+      }
+    }
+
+    function switchPayment(method) {
+      document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.payment-form').forEach(f => f.classList.remove('active'));
+      document.querySelector('[data-method="' + method + '"]').classList.add('active');
+      document.getElementById('payment-' + method).classList.add('active');
+    }
+
+    function copyAddress(btn) {
+      const code = btn.previousElementSibling.querySelector('code');
+      navigator.clipboard.writeText(code.textContent).then(() => {
+        btn.textContent = 'Kopyalandı!';
+        setTimeout(() => btn.textContent = 'Kopyala', 2000);
+      });
+    }
+  </script>
+</body>
+</html>
