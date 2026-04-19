@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resurslar | Red Team Academy</title>
+  <meta name="description" content="Red Team aletleri, platformalar, kitablar ve pulsuz resurslar - kibertehlukesizlik ugurunda ehtiyac duydugunuz her sey.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Sehife</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="about.html">Haqqimizda</a>
+        <a href="blog.html">Blog</a>
+        <a href="resources.html" class="active">Resurslar</a>
+        <a href="contact.html">Elaqe</a>
+        <a href="register.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="glitch-text">Resurslar & Aletler</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Sehife</a>
+        <span class="separator">/</span>
+        <span class="current">Resurslar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TOOLS SECTION ========== -->
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Red Team Aletleri</h2>
+        <div class="accent-line"></div>
+        <p>Pesekar red team emeliyyatlarinda istifade olunan esas aletler</p>
+      </div>
+
+      <!-- Tool Category: Reconnaissance -->
+      <div class="resource-category fade-in">
+        <div class="resource-category-header">
+          <div class="resource-category-icon">🔍</div>
+          <h3>Reconnaissance & OSINT</h3>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Nmap</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Sebeke keshfiyyati ve port skanlamasi ucun standart alet. Servis ve OS deteksiyasi.</p>
+            <div class="tool-footer">
+              <a href="https://nmap.org" target="_blank" class="tool-link">nmap.org</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Recon-ng</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Web-based reconnaissance framework. Modular dizayn, bir cox OSINT moduller.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/lanmaster53/recon-ng" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Shodan</span>
+              <span class="tool-tag tag-freemium">Freemium</span>
+            </div>
+            <p>Internet of Things axtaris motoru. Aciq portlar, servisler ve zeiflikler.</p>
+            <div class="tool-footer">
+              <a href="https://shodan.io" target="_blank" class="tool-link">shodan.io</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">theHarvester</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Email, subdomain, host ve ad toplama aleti. Bir cox axtaris menbeyi destekleyir.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/laramies/theHarvester" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Category: Exploitation -->
+      <div class="resource-category fade-in">
+        <div class="resource-category-header">
+          <div class="resource-category-icon">💥</div>
+          <h3>Exploitation & Post-Exploitation</h3>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Metasploit</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Dunya uzre en populyar exploitation framework. Exploit, payload ve post-exploitation modullari.</p>
+            <div class="tool-footer">
+              <a href="https://metasploit.com" target="_blank" class="tool-link">metasploit.com</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Cobalt Strike</span>
+              <span class="tool-tag tag-paid">Odanisli</span>
+            </div>
+            <p>Professional red team C2 framework. Beacon, malleable profiles ve team server.</p>
+            <div class="tool-footer">
+              <a href="https://cobaltstrike.com" target="_blank" class="tool-link">cobaltstrike.com</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Sliver</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Aciq menbe C2 framework. Cross-platform implants, mTLS, DNS ve HTTP(S) C2.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/BishopFox/sliver" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Havoc</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Modern post-exploitation C2 framework. Demon agent, BOF desteki ve extensible dizayn.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/HavocFramework/Havoc" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Category: Web -->
+      <div class="resource-category fade-in">
+        <div class="resource-category-header">
+          <div class="resource-category-icon">🌐</div>
+          <h3>Web Application Testing</h3>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Burp Suite</span>
+              <span class="tool-tag tag-freemium">Freemium</span>
+            </div>
+            <p>Web tehlukesizlik testinin standart aleti. Proxy, scanner, repeater ve diger modullar.</p>
+            <div class="tool-footer">
+              <a href="https://portswigger.net/burp" target="_blank" class="tool-link">portswigger.net</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">SQLMap</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Avtomatik SQL injection tapma ve istismar aleti. Bir cox veritabani destekleyir.</p>
+            <div class="tool-footer">
+              <a href="https://sqlmap.org" target="_blank" class="tool-link">sqlmap.org</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Nuclei</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Template-based zeiflik skaneri. Suretli, extensible ve icma terefinden desteklenen.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/projectdiscovery/nuclei" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">FFUF</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Suretli web fuzzer. Directory, parameter ve virtual host brute-forcing ucun ideal.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/ffuf/ffuf" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool Category: AD -->
+      <div class="resource-category fade-in">
+        <div class="resource-category-header">
+          <div class="resource-category-icon">🏢</div>
+          <h3>Active Directory & Internal</h3>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">BloodHound</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>AD munasibetlerini qrafik olaraq gosterir. Hucum yollarini avtomatik tapir.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/BloodHoundAD/BloodHound" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Impacket</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Python network protokol kitabxanasi. SMB, LDAP, Kerberos ve diger AD hucum aletleri.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/fortra/impacket" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Rubeus</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Kerberos hucum aleti. AS-REP Roasting, Kerberoasting, ticket manipulation.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/GhostPack/Rubeus" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-header">
+              <span class="tool-name">Mimikatz</span>
+              <span class="tool-tag tag-free">Pulsuz</span>
+            </div>
+            <p>Windows credential extraction aleti. Pass-the-Hash, Golden Ticket, DCSync.</p>
+            <div class="tool-footer">
+              <a href="https://github.com/gentilkiwi/mimikatz" target="_blank" class="tool-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRACTICE PLATFORMS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Praktik Platformalar</h2>
+        <div class="accent-line"></div>
+        <p>Bacariqlarinizi inkisaf etdirmek ucun en yaxsi platformalar</p>
+      </div>
+      <div class="platforms-grid">
+        <div class="platform-card fade-in">
+          <div class="platform-header">
+            <div class="platform-icon">🟩</div>
+            <div>
+              <h3>HackTheBox</h3>
+              <span class="platform-type">Labs & Challenges</span>
+            </div>
+          </div>
+          <p>Canli masinlar, pro labs, CTF yarismalar ve kibertehlukesizlik tecruebesi ucun en boyuk platforma.</p>
+          <div class="platform-features">
+            <span>Canli masinlar</span>
+            <span>Pro Labs</span>
+            <span>CTF</span>
+            <span>Fortresses</span>
+          </div>
+          <a href="https://hackthebox.com" target="_blank" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">Ziyaret Et</a>
+        </div>
+        <div class="platform-card fade-in">
+          <div class="platform-header">
+            <div class="platform-icon">🔵</div>
+            <div>
+              <h3>TryHackMe</h3>
+              <span class="platform-type">Guided Learning</span>
+            </div>
+          </div>
+          <p>Baslangicdan qabaqcil seviyyeye qeder addim-addim oyrenmek ucun ideal platforma. Interaktiv dersler.</p>
+          <div class="platform-features">
+            <span>Learning Paths</span>
+            <span>Rooms</span>
+            <span>Guided</span>
+            <span>Free tier</span>
+          </div>
+          <a href="https://tryhackme.com" target="_blank" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">Ziyaret Et</a>
+        </div>
+        <div class="platform-card fade-in">
+          <div class="platform-header">
+            <div class="platform-icon">🟠</div>
+            <div>
+              <h3>PortSwigger Academy</h3>
+              <span class="platform-type">Web Security</span>
+            </div>
+          </div>
+          <p>Web tehlukesizliyini oyrenemk ucun en yaxsi pulsuz platforma. OWASP Top 10 ve daha cox.</p>
+          <div class="platform-features">
+            <span>Pulsuz</span>
+            <span>Web Labs</span>
+            <span>Interactive</span>
+            <span>BSCP Prep</span>
+          </div>
+          <a href="https://portswigger.net/web-security" target="_blank" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">Ziyaret Et</a>
+        </div>
+        <div class="platform-card fade-in">
+          <div class="platform-header">
+            <div class="platform-icon">🟡</div>
+            <div>
+              <h3>VulnHub</h3>
+              <span class="platform-type">Vulnerable VMs</span>
+            </div>
+          </div>
+          <p>Yuklemeye hazirlanan zeif virtual masinlar. Yerli laboratoriya qurmaq ucun ideal.</p>
+          <div class="platform-features">
+            <span>Pulsuz</span>
+            <span>VMs</span>
+            <span>Offline</span>
+            <span>CTF Style</span>
+          </div>
+          <a href="https://vulnhub.com" target="_blank" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">Ziyaret Et</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOKS & LEARNING ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Tovsiye Olunan Kitablar</h2>
+        <div class="accent-line"></div>
+        <p>Red team ve kibertehlukesizlik sahesinde mutleq oxunmali kitablar</p>
+      </div>
+      <div class="books-grid">
+        <div class="book-card fade-in">
+          <div class="book-icon">📕</div>
+          <h3>The Hacker Playbook 3</h3>
+          <p class="book-author">Peter Kim</p>
+          <p>Red team emeliyyatlari ucun praktik belecci. Real dunya ssenarilaeri ve texnikalar.</p>
+          <div class="book-tags">
+            <span>Red Team</span>
+            <span>Praktik</span>
+          </div>
+        </div>
+        <div class="book-card fade-in">
+          <div class="book-icon">📗</div>
+          <h3>Penetration Testing</h3>
+          <p class="book-author">Georgia Weidman</p>
+          <p>Penetration testing-e giris ucun mukeemmel kitab. Baslangicdan ortaya qeder.</p>
+          <div class="book-tags">
+            <span>Pentest</span>
+            <span>Baslangic</span>
+          </div>
+        </div>
+        <div class="book-card fade-in">
+          <div class="book-icon">📘</div>
+          <h3>Red Team Development & Operations</h3>
+          <p class="book-author">Joe Vest & James Tubberville</p>
+          <p>Red team emeliyyatlarinin planlasmasi, icrasi ve hesabat vermesi haqqinda hemheyatli belecci.</p>
+          <div class="book-tags">
+            <span>Red Team</span>
+            <span>Operations</span>
+          </div>
+        </div>
+        <div class="book-card fade-in">
+          <div class="book-icon">📙</div>
+          <h3>The Web Application Hacker's Handbook</h3>
+          <p class="book-author">Dafydd Stuttard & Marcus Pinto</p>
+          <p>Web tehlukesizliyin "bibliyasi". OWASP zeifliklerinin derinlemesine izahi.</p>
+          <div class="book-tags">
+            <span>Web Security</span>
+            <span>Klassik</span>
+          </div>
+        </div>
+        <div class="book-card fade-in">
+          <div class="book-icon">📓</div>
+          <h3>Hacking: The Art of Exploitation</h3>
+          <p class="book-author">Jon Erickson</p>
+          <p>Exploit development-in esaslari. Buffer overflow, shellcode ve network hacking.</p>
+          <div class="book-tags">
+            <span>Exploit Dev</span>
+            <span>Classik</span>
+          </div>
+        </div>
+        <div class="book-card fade-in">
+          <div class="book-icon">📒</div>
+          <h3>Practical Malware Analysis</h3>
+          <p class="book-author">Michael Sikorski & Andrew Honig</p>
+          <p>Zererli proqram analizinin A-dan Z-ye belecci. Statik ve dinamik analiz texnikalari.</p>
+          <div class="book-tags">
+            <span>Malware</span>
+            <span>Forensics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CHEAT SHEETS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Cheat Sheets & Referanslar</h2>
+        <div class="accent-line"></div>
+        <p>Suretli referans ucun faydali cheat sheets</p>
+      </div>
+      <div class="cheatsheets-grid">
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>Nmap Cheat Sheet</h3>
+          <p>Butun nmap scan tipleri, NSE scriptleri ve parametrler.</p>
+        </div>
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>Reverse Shell Cheat Sheet</h3>
+          <p>Bash, Python, PHP, Powershell ve diger dillerde reverse shell-ler.</p>
+        </div>
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>Linux Privilege Escalation</h3>
+          <p>SUID, cron jobs, kernel exploits, capabilities ve diger privesc texnikalari.</p>
+        </div>
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>Windows Privilege Escalation</h3>
+          <p>Token manipulation, service exploits, registry, ve diger Windows privesc yollari.</p>
+        </div>
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>SQL Injection Cheat Sheet</h3>
+          <p>Union, blind, error-based, time-based SQLi payloadlari.</p>
+        </div>
+        <div class="cheatsheet-card fade-in">
+          <div class="cheatsheet-icon">📋</div>
+          <h3>Active Directory Cheat Sheet</h3>
+          <p>Enumeration, Kerberos hucumlari, lateral movement ve persistence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section cta-section">
+    <div class="container fade-in">
+      <h2>Bu aletleri ve daha coxunu<br>kurslarimizda oyrenin</h2>
+      <p>Praktik laboratoriyalar ve muellim desteyi ile red team bacariqlarinizi inkisaf etdirin.</p>
+      <a href="courses.html" class="btn btn-primary">Kurslara Bax</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertehlukesizlik sahesinde professional telim platformasi.</p>
+          <div class="footer-social">
+            <a href="#">GH</a><a href="#">TW</a><a href="#">LI</a><a href="#">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Sehifeler</h4>
+          <ul>
+            <li><a href="index.html">Ana Sehife</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqimizda</a></li>
+            <li><a href="resources.html">Resurslar</a></li>
+            <li><a href="contact.html">Elaqe</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Elaqe</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Baki, Azerbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Butun huquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
