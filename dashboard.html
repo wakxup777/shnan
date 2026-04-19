@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Red Team Academy</title>
+  <meta name="description" content="Red Team Academy - Tələbə paneli">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Səhifə</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Əlaqə</a>
+        <a href="register.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="glitch-text">Dashboard</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Səhifə</a>
+        <span class="separator">/</span>
+        <span class="current">Dashboard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Not Logged In State -->
+  <section class="section" id="dashNotLoggedIn" style="padding-top: 40px;">
+    <div class="container">
+      <div class="dash-empty fade-in">
+        <div class="dash-empty-icon">🔒</div>
+        <h2>Giriş Tələb Olunur</h2>
+        <p>Dashboard-a daxil olmaq üçün əvvəlcə qeydiyyatdan keçin.</p>
+        <a href="register.html" class="btn btn-primary" style="margin-top: 20px;">Qeydiyyat →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logged In Dashboard -->
+  <section class="section" id="dashLoggedIn" style="padding-top: 40px; display: none;">
+    <div class="container">
+
+      <!-- Welcome Banner -->
+      <div class="dash-welcome fade-in">
+        <div class="dash-welcome-info">
+          <h2>Xoş gəldin, <span id="dashUserName">User</span>!</h2>
+          <p>Son giriş: <span id="dashLastLogin">-</span></p>
+        </div>
+        <div class="dash-welcome-stats">
+          <div class="dash-mini-stat">
+            <span class="dash-mini-number" id="dashCourseCount">1</span>
+            <span class="dash-mini-label">Kurs</span>
+          </div>
+          <div class="dash-mini-stat">
+            <span class="dash-mini-number">0</span>
+            <span class="dash-mini-label">Sertifikat</span>
+          </div>
+          <div class="dash-mini-stat">
+            <span class="dash-mini-number" id="dashProgress">15</span>
+            <span class="dash-mini-label">% Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <!-- Main Content -->
+        <div class="dash-main">
+
+          <!-- Active Course -->
+          <div class="dash-section fade-in">
+            <h3 class="dash-section-title">Aktiv Kurslarım</h3>
+            <div class="dash-course-card">
+              <div class="dash-course-header">
+                <div class="dash-course-icon">⚔️</div>
+                <div>
+                  <h4 id="dashCourseName">Red Team Operations</h4>
+                  <span class="course-level level-advanced" id="dashCourseLevel">Qabaqcıl</span>
+                </div>
+              </div>
+              <div class="dash-progress-bar">
+                <div class="dash-progress-fill" id="dashProgressBar" style="width: 15%;"></div>
+              </div>
+              <div class="dash-progress-info">
+                <span>Modul 2 / 12</span>
+                <span id="dashProgressPercent">15%</span>
+              </div>
+              <div class="dash-modules">
+                <div class="dash-module completed">
+                  <span class="module-check">✓</span>
+                  <span>Modul 1: Giriş və Əsaslar</span>
+                </div>
+                <div class="dash-module active">
+                  <span class="module-check">▶</span>
+                  <span>Modul 2: Reconnaissance & OSINT</span>
+                </div>
+                <div class="dash-module locked">
+                  <span class="module-check">🔒</span>
+                  <span>Modul 3: Initial Access</span>
+                </div>
+                <div class="dash-module locked">
+                  <span class="module-check">🔒</span>
+                  <span>Modul 4: Persistence & Evasion</span>
+                </div>
+                <div class="dash-module locked">
+                  <span class="module-check">🔒</span>
+                  <span>Modul 5: Lateral Movement</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary" style="margin-top: 15px;">Dərsə Davam Et →</a>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="dash-section fade-in">
+            <h3 class="dash-section-title">Son Aktivlik</h3>
+            <div class="dash-activity-list">
+              <div class="dash-activity-item">
+                <div class="activity-icon">📚</div>
+                <div class="activity-info">
+                  <p>Modul 1 tamamlandı: "Giriş və Əsaslar"</p>
+                  <span class="activity-time">2 gün əvvəl</span>
+                </div>
+              </div>
+              <div class="dash-activity-item">
+                <div class="activity-icon">🎯</div>
+                <div class="activity-info">
+                  <p>CTF tapşırığı həll edildi: "SQL Injection Lab"</p>
+                  <span class="activity-time">3 gün əvvəl</span>
+                </div>
+              </div>
+              <div class="dash-activity-item">
+                <div class="activity-icon">✅</div>
+                <div class="activity-info">
+                  <p>Qeydiyyat tamamlandı</p>
+                  <span class="activity-time" id="dashRegDate">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="dash-sidebar">
+          <!-- Profile Card -->
+          <div class="dash-profile-card fade-in">
+            <div class="dash-avatar" id="dashAvatar">??</div>
+            <h4 id="dashFullName">-</h4>
+            <p class="dash-email" id="dashEmail">-</p>
+            <div class="dash-badge">
+              <span>🔰 Tələbə</span>
+            </div>
+            <div class="dash-profile-stats">
+              <div>
+                <strong>Ölkə</strong>
+                <span id="dashCountry">-</span>
+              </div>
+              <div>
+                <strong>Səviyyə</strong>
+                <span id="dashExperience">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="dash-quick-links fade-in">
+            <h3 class="dash-section-title">Sürətli Keçidlər</h3>
+            <a href="courses.html" class="dash-quick-link">📚 Bütün Kurslar</a>
+            <a href="blog.html" class="dash-quick-link">📝 Blog</a>
+            <a href="contact.html" class="dash-quick-link">💬 Dəstək</a>
+            <a href="#" class="dash-quick-link">🏆 Sertifikatlar</a>
+            <a href="#" class="dash-quick-link">⚙️ Profil Ayarları</a>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div class="dash-events fade-in">
+            <h3 class="dash-section-title">Yaxınlaşan Tədbirlər</h3>
+            <div class="dash-event">
+              <div class="event-date">
+                <span class="event-day">20</span>
+                <span class="event-month">APR</span>
+              </div>
+              <div>
+                <strong>CTF Yarışması</strong>
+                <p>Online, 14:00 - 20:00</p>
+              </div>
+            </div>
+            <div class="dash-event">
+              <div class="event-date">
+                <span class="event-day">25</span>
+                <span class="event-month">APR</span>
+              </div>
+              <div>
+                <strong>Live Webinar: OSCP Tips</strong>
+                <p>Zoom, 18:00 - 19:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması.</p>
+          <div class="footer-social">
+            <a href="#">GH</a><a href="#">TW</a><a href="#">LI</a><a href="#">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Dashboard Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(localStorage.getItem('redteam_user'));
+      
+      if (user && user.name) {
+        document.getElementById('dashNotLoggedIn').style.display = 'none';
+        document.getElementById('dashLoggedIn').style.display = 'block';
+        
+        // Populate data
+        document.getElementById('dashUserName').textContent = user.name;
+        document.getElementById('dashFullName').textContent = (user.name || '') + ' ' + (user.surname || '');
+        document.getElementById('dashEmail').textContent = user.email || '-';
+        document.getElementById('dashAvatar').textContent = 
+          ((user.name?.[0] || '') + (user.surname?.[0] || '')).toUpperCase();
+        
+        if (user.course) {
+          document.getElementById('dashCourseName').textContent = user.course;
+        }
+        
+        if (user.registeredAt) {
+          const date = new Date(user.registeredAt);
+          document.getElementById('dashRegDate').textContent = date.toLocaleDateString('az-AZ');
+          document.getElementById('dashLastLogin').textContent = new Date().toLocaleDateString('az-AZ') + ' ' + new Date().toLocaleTimeString('az-AZ');
+        }
+
+        const countryMap = {
+          'AZ': 'Azərbaycan', 'TR': 'Türkiyə', 'RU': 'Rusiya',
+          'GE': 'Gürcüstan', 'US': 'ABŞ', 'UK': 'Britaniya',
+          'DE': 'Almaniya', 'OTHER': 'Digər'
+        };
+        document.getElementById('dashCountry').textContent = countryMap[user.country] || user.country || '-';
+
+        const expMap = {
+          'none': 'Yeni', 'beginner': 'Başlanğıc',
+          'intermediate': 'Orta', 'advanced': 'Qabaqcıl',
+          'professional': 'Professional'
+        };
+        document.getElementById('dashExperience').textContent = expMap[user.experience] || user.experience || '-';
+      }
+    });
+  </script>
+</body>
+</html>

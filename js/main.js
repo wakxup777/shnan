@@ -4,6 +4,52 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ========== LOADING SCREEN ==========
+  const loadingScreen = document.getElementById('loadingScreen');
+  if (loadingScreen) {
+    const loadLines = [
+      '[*] Establishing secure connection...',
+      '[*] Encrypting tunnel... AES-256-GCM',
+      '[+] Connection established via TOR',
+      '[+] Access granted. Welcome, operator.'
+    ];
+    
+    const loadBar = document.getElementById('loadingBarFill');
+    const loadPercent = document.getElementById('loadingPercent');
+    let progress = 0;
+    
+    // Show lines sequentially
+    function showLoadLine(index) {
+      if (index >= loadLines.length) return;
+      const el = document.getElementById('loadLine' + (index + 1));
+      if (el) {
+        el.textContent = loadLines[index];
+        el.style.opacity = '0';
+        setTimeout(() => { el.style.opacity = '1'; }, 50);
+      }
+    }
+    
+    showLoadLine(0);
+    setTimeout(() => showLoadLine(1), 600);
+    setTimeout(() => showLoadLine(2), 1200);
+    setTimeout(() => showLoadLine(3), 1800);
+    
+    // Progress bar
+    const loadInterval = setInterval(() => {
+      progress += Math.random() * 8 + 2;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(loadInterval);
+        setTimeout(() => {
+          loadingScreen.classList.add('hidden');
+          setTimeout(() => loadingScreen.remove(), 500);
+        }, 300);
+      }
+      if (loadBar) loadBar.style.width = progress + '%';
+      if (loadPercent) loadPercent.textContent = Math.floor(progress) + '%';
+    }, 100);
+  }
+
   // ========== MATRIX RAIN EFFECT ==========
   const matrixCanvas = document.getElementById('matrixCanvas');
   if (matrixCanvas) {

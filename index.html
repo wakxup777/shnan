@@ -10,6 +10,23 @@
 </head>
 <body>
 
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">🛡️</div>
+      <div class="loading-text">
+        <span class="loading-line" id="loadLine1">[*] Establishing secure connection...</span>
+        <span class="loading-line" id="loadLine2"></span>
+        <span class="loading-line" id="loadLine3"></span>
+        <span class="loading-line" id="loadLine4"></span>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-bar-fill" id="loadingBarFill"></div>
+      </div>
+      <div class="loading-percent" id="loadingPercent">0%</div>
+    </div>
+  </div>
+
   <!-- Matrix Rain Canvas -->
   <canvas id="matrixCanvas"></canvas>
 
@@ -24,6 +41,7 @@
         <a href="index.html" class="active">Ana Səhifə</a>
         <a href="courses.html">Kurslar</a>
         <a href="about.html">Haqqımızda</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Əlaqə</a>
         <a href="register.html" class="nav-cta">Qeydiyyat</a>
       </div>
@@ -232,6 +250,52 @@
           <div class="stat-icon">🌍</div>
           <div class="stat-number"><span class="counter" data-target="15">0</span><span class="counter-suffix">+</span></div>
           <div class="stat-label">Ölkə</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Tələbələrimiz Deyir</h2>
+        <div class="accent-line"></div>
+        <p>Məzunlarımızın rəyləri</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Red Team Academy həyatımı dəyişdi. Sıfırdan başlayaraq 6 ay ərzində penetration tester kimi iş tapdım. Kurslar çox praktikdir."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EM</div>
+            <div>
+              <div class="testimonial-name">Elvin Məmmədov</div>
+              <div class="testimonial-role">Junior Penetration Tester @ CyberSec AZ</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Web Security kursundan sonra bug bounty proqramlarında iştirak etməyə başladım. İlk ayda 3 zəiflik tapdım və $2000 qazandım."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">NA</div>
+            <div>
+              <div class="testimonial-name">Nigar Axundova</div>
+              <div class="testimonial-role">Bug Bounty Hunter</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Red Team Operations kursu çox intensiv idi. Real APT simulyasiyaları ilə təcrübə qazandım. OSCP imtahanını ilk cəhddə keçdim."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TH</div>
+            <div>
+              <div class="testimonial-name">Tural Həsənli</div>
+              <div class="testimonial-role">Red Team Operator @ Global Corp</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

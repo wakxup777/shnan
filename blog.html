@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Red Team Academy</title>
+  <meta name="description" content="Kibertəhlükəsizlik bloqu - ən son hücum texnikaları, zəifliklər və red team strategiyaları.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">🛡️</div>
+        <div class="logo-text">Red<span>Team</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Ana Səhifə</a>
+        <a href="courses.html">Kurslar</a>
+        <a href="about.html">Haqqımızda</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Əlaqə</a>
+        <a href="register.html" class="nav-cta">Qeydiyyat</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="glitch-text">Blog</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Ana Səhifə</a>
+        <span class="separator">/</span>
+        <span class="current">Blog</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="container">
+
+      <!-- Featured Post -->
+      <div class="blog-featured fade-in">
+        <div class="blog-featured-badge">YENİ</div>
+        <div class="blog-featured-content">
+          <div class="blog-meta">
+            <span class="blog-date">📅 15 Aprel 2024</span>
+            <span class="blog-category">Red Team</span>
+            <span class="blog-read-time">⏱ 8 dəq</span>
+          </div>
+          <h2>2024-cü ildə Red Team Əməliyyatlarının Gələcəyi: AI, Evasion və Yeni Hücum Vektorları</h2>
+          <p>Süni intellektin red team əməliyyatlarında istifadəsi, EDR bypass texnikaları və bulud infrastrukturuna qarşı yeni hücum yanaşmaları haqqında ətraflı təhlil.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: 15px;">Oxu →</a>
+        </div>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">🔓</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">10 Aprel 2024</span>
+              <span class="blog-category">Web Security</span>
+            </div>
+            <h3>OWASP Top 10 - 2024: Nə Dəyişdi?</h3>
+            <p>OWASP-ın yenilənmiş top 10 siyahısı, yeni kateqoriyalar və web tətbiqləri üçün ən kritik risklər.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">🏢</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">5 Aprel 2024</span>
+              <span class="blog-category">Active Directory</span>
+            </div>
+            <h3>Active Directory Hücumları: Kerberoasting-dən Domain Admin-ə</h3>
+            <p>Step-by-step: Kerberoasting, AS-REP Roasting, DCSync və Golden Ticket hücumları laboratoriya mühitində.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">🎭</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">28 Mart 2024</span>
+              <span class="blog-category">Social Engineering</span>
+            </div>
+            <h3>AI ilə Phishing: Deepfake Səsli Hücumların Yüksəlişi</h3>
+            <p>Süni intellekt vasitəsilə yaradılan deepfake audio hücumlar və onlardan qorunma yolları.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">🦠</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">20 Mart 2024</span>
+              <span class="blog-category">Malware</span>
+            </div>
+            <h3>Fileless Malware Analizi: Yaddaşda Gizlənən Təhdidlər</h3>
+            <p>Fayl-sız zərərli proqramlar necə işləyir, PowerShell əsaslı hücumlar və memory forensics texnikaları.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">☁️</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">15 Mart 2024</span>
+              <span class="blog-category">Cloud Security</span>
+            </div>
+            <h3>AWS Pentesting: S3 Bucket-dən EC2 Instance-a</h3>
+            <p>AWS mühitində penetration testing, yanlış konfiqurasiyalar və privilege escalation texnikaları.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-in">
+          <div class="blog-card-image">🔧</div>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span class="blog-date">8 Mart 2024</span>
+              <span class="blog-category">Tools</span>
+            </div>
+            <h3>2024-ün Ən Yaxşı Red Team Alətləri</h3>
+            <p>Cobalt Strike, Sliver, Havoc, Mythic C2 və digər red team framework-lərinin müqayisəsi.</p>
+            <a href="#" class="blog-read-more">Daha Ətraflı →</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Red<span>Team</span> Academy</div>
+          <p>Kibertəhlükəsizlik sahəsində professional təlim platforması.</p>
+          <div class="footer-social">
+            <a href="#">GH</a><a href="#">TW</a><a href="#">LI</a><a href="#">DC</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Səhifələr</h4>
+          <ul>
+            <li><a href="index.html">Ana Səhifə</a></li>
+            <li><a href="courses.html">Kurslar</a></li>
+            <li><a href="about.html">Haqqımızda</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurslar</h4>
+          <ul>
+            <li><a href="courses.html">Ethical Hacking</a></li>
+            <li><a href="courses.html">Pentest</a></li>
+            <li><a href="courses.html">Web Security</a></li>
+            <li><a href="courses.html">Red Team Ops</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Əlaqə</h4>
+          <ul>
+            <li><a href="mailto:info@redteamacademy.az">info@redteamacademy.az</a></li>
+            <li><a href="tel:+994501234567">+994 50 123 45 67</a></li>
+            <li><a href="#">Bakı, Azərbaycan</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Red<span>Team</span> Academy. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
