@@ -10,22 +10,24 @@
    CSS Variables / Design Tokens
    ============================================ */
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a2e;
-  --bg-card: rgba(26, 26, 46, 0.7);
-  --bg-card-hover: rgba(26, 26, 46, 0.9);
-  --primary: #e74c3c;
-  --primary-dark: #c0392b;
-  --neon-red: #ff0040;
+  --bg-primary: #050505;
+  --bg-secondary: #0d0d1a;
+  --bg-card: rgba(13, 13, 26, 0.85);
+  --bg-card-hover: rgba(13, 13, 26, 0.95);
+  --primary: #cc0000;
+  --primary-dark: #990000;
+  --neon-red: #ff0033;
   --neon-green: #00ff41;
-  --text-primary: #e0e0e0;
-  --text-secondary: #888888;
-  --text-white: #ffffff;
-  --border-color: rgba(231, 76, 60, 0.3);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --shadow-glow: 0 0 20px rgba(231, 76, 60, 0.3);
-  --shadow-glow-strong: 0 0 40px rgba(231, 76, 60, 0.5);
+  --neon-cyan: #00ffcc;
+  --text-primary: #b0b0b0;
+  --text-secondary: #555555;
+  --text-white: #d4d4d4;
+  --border-color: rgba(204, 0, 0, 0.25);
+  --glass-bg: rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 20px rgba(204, 0, 0, 0.4);
+  --shadow-glow-strong: 0 0 40px rgba(204, 0, 0, 0.6);
+  --shadow-green-glow: 0 0 15px rgba(0, 255, 65, 0.3);
   --font-heading: 'Orbitron', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'Fira Code', monospace;
@@ -85,8 +87,22 @@ button, input, textarea, select {
 }
 
 /* ============================================
-   Matrix Rain Background (CSS-only version)
+   Deep Web / Dark Atmosphere Effects
    ============================================ */
+
+/* Matrix Rain Canvas (positioned by JS) */
+#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+/* CRT Scanlines Overlay */
 body::before {
   content: '';
   position: fixed;
@@ -94,12 +110,94 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(ellipse at 20% 50%, rgba(231, 76, 60, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(255, 0, 64, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(0, 255, 65, 0.02) 0%, transparent 40%);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+}
+
+/* Vignette / Dark edges */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
   pointer-events: none;
   z-index: 0;
+}
+
+/* Glitch Text Effect */
+@keyframes glitch {
+  0% { text-shadow: 2px 0 #ff0033, -2px 0 #00ffcc; }
+  20% { text-shadow: -2px 0 #ff0033, 2px 0 #00ffcc; }
+  40% { text-shadow: 2px 2px #ff0033, -2px -2px #00ffcc; }
+  60% { text-shadow: -1px 0 #ff0033, 1px 0 #00ffcc; }
+  80% { text-shadow: 0 -2px #ff0033, 0 2px #00ffcc; }
+  100% { text-shadow: 2px 0 #ff0033, -2px 0 #00ffcc; }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-0.5deg); }
+  40% { transform: skew(0.5deg); }
+  60% { transform: skew(0deg); }
+  80% { transform: skew(-0.3deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.4; }
+  6% { opacity: 1; }
+  7% { opacity: 0.5; }
+  9% { opacity: 1; }
+  50% { opacity: 1; }
+  52% { opacity: 0.8; }
+  53% { opacity: 1; }
+}
+
+.glitch-text {
+  animation: glitch 3s infinite, glitch-skew 5s infinite;
+}
+
+.flicker {
+  animation: flicker 8s infinite;
+}
+
+/* Corrupted / distorted border effect */
+@keyframes border-glitch {
+  0%, 100% { border-color: var(--border-color); }
+  25% { border-color: rgba(0, 255, 65, 0.3); }
+  50% { border-color: var(--border-color); }
+  75% { border-color: rgba(0, 255, 204, 0.2); }
+}
+
+/* Mysterious floating particles */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  50% { transform: translateY(-200px) translateX(50px); opacity: 0.3; }
+  90% { opacity: 0; }
+  100% { transform: translateY(-400px) translateX(-30px); opacity: 0; }
+}
+
+/* Deep web red pulse on entire page */
+@keyframes deep-pulse {
+  0%, 100% { box-shadow: inset 0 0 100px rgba(204, 0, 0, 0); }
+  50% { box-shadow: inset 0 0 100px rgba(204, 0, 0, 0.03); }
+}
+
+body {
+  animation: deep-pulse 8s ease-in-out infinite;
 }
 
 /* ============================================
@@ -202,10 +300,11 @@ body::before {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(5, 5, 5, 0.97);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(204, 0, 0, 0.15);
   padding: 10px 0;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.8);
 }
 
 .navbar .container {
@@ -346,9 +445,26 @@ body::before {
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(204, 0, 0, 0.06) 0%, transparent 70%);
   border-radius: 50%;
-  animation: pulse-glow 4s ease-in-out infinite;
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '> ACCESS RESTRICTED _ AUTHORIZED PERSONNEL ONLY _ SECTION [REDACTED] _ CLEARANCE LEVEL: RED _';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: rgba(204, 0, 0, 0.15);
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: flicker 12s infinite;
+  pointer-events: none;
+  z-index: 1;
 }
 
 @keyframes pulse-glow {
@@ -486,11 +602,12 @@ body::before {
 .terminal-window {
   width: 100%;
   max-width: 500px;
-  background: var(--bg-secondary);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: var(--radius);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(0, 255, 65, 0.1);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 65, 0.05);
+  animation: border-glitch 10s infinite;
 }
 
 .terminal-header {
@@ -1551,14 +1668,14 @@ body::before {
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(5, 5, 5, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
     gap: 30px;
     padding: 40px;
     transition: var(--transition-slow);
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid rgba(204, 0, 0, 0.15);
   }
   
   .nav-links.active {
