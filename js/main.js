@@ -4,6 +4,80 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ========== MATRIX RAIN EFFECT ==========
+  const matrixCanvas = document.getElementById('matrixCanvas');
+  if (matrixCanvas) {
+    const ctx = matrixCanvas.getContext('2d');
+    
+    function resizeCanvas() {
+      matrixCanvas.width = window.innerWidth;
+      matrixCanvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF{}[]<>/\\|~!@#$%^&*';
+    const charArray = chars.split('');
+    const fontSize = 14;
+    const columns = Math.floor(matrixCanvas.width / fontSize);
+    const drops = [];
+    
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.floor(Math.random() * -100);
+    }
+    
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+      ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+      
+      for (let i = 0; i < drops.length; i++) {
+        const char = charArray[Math.floor(Math.random() * charArray.length)];
+        
+        // Mix of red and green characters for deep web feel
+        if (Math.random() > 0.85) {
+          ctx.fillStyle = 'rgba(204, 0, 0, 0.8)';  // Red chars
+        } else if (Math.random() > 0.95) {
+          ctx.fillStyle = 'rgba(0, 255, 204, 0.6)'; // Cyan chars
+        } else {
+          ctx.fillStyle = 'rgba(0, 255, 65, 0.5)';  // Green chars
+        }
+        
+        ctx.font = fontSize + 'px monospace';
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        
+        if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    
+    setInterval(drawMatrix, 50);
+  }
+
+  // ========== RANDOM GLITCH BURST ON HEADINGS ==========
+  function randomGlitchBurst() {
+    const glitchElements = document.querySelectorAll('.glitch-text');
+    glitchElements.forEach(el => {
+      // Occasionally add an intense glitch burst
+      if (Math.random() > 0.7) {
+        el.style.textShadow = `
+          ${Math.random() * 10 - 5}px 0 #ff0033,
+          ${Math.random() * -10 + 5}px 0 #00ffcc,
+          0 0 20px rgba(204, 0, 0, 0.5)
+        `;
+        el.style.transform = `skew(${Math.random() * 2 - 1}deg)`;
+        
+        setTimeout(() => {
+          el.style.textShadow = '';
+          el.style.transform = '';
+        }, 150);
+      }
+    });
+  }
+  
+  setInterval(randomGlitchBurst, 3000);
+
   // ========== NAVBAR SCROLL EFFECT ==========
   const navbar = document.getElementById('navbar');
   
@@ -42,11 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (typedTextEl) {
     const phrases = [
-      '$ Kibertəhlükəsizlik öyrən',
-      '$ Red Team mütəxəssisi ol',
-      '$ Penetration testing öyrən',
-      '$ Exploit development başla',
-      '$ Bug bounty hunter ol'
+      '> INITIALIZING SECURE CONNECTION...',
+      '> ACCESS GRANTED // CLEARANCE: RED',
+      '> LOADING ENCRYPTED MODULES...',
+      '> WELCOME TO THE DARK SIDE',
+      '> [REDACTED] PROTOCOL ACTIVATED',
+      '> BREACH DETECTED // STAND BY...'
     ];
     
     let phraseIndex = 0;
@@ -87,12 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (terminalTyping) {
     const terminalCommands = [
-      'msfconsole',
-      'use exploit/multi/handler',
-      'set LHOST 10.10.14.1',
-      'run',
-      'hashcat -m 1000 hash.txt rockyou.txt',
-      'gobuster dir -u http://target -w wordlist.txt'
+      'proxychains nmap -sT -Pn darknet.onion',
+      'tor --hash-password [REDACTED]',
+      'sqlmap -u "target.onion/login" --dbs --tor',
+      'msfconsole -x "use exploit/multi/handler"',
+      'hashcat -m 13100 krb5tgs.hash rockyou.txt',
+      'mimikatz # sekurlsa::logonpasswords',
+      'python3 c2_beacon.py --encrypt --exfil'
     ];
     
     let cmdIndex = 0;
