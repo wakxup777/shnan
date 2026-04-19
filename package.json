@@ -1,0 +1,23 @@
+{
+  "name": "shnan",
+  "version": "1.0.0",
+  "description": "A cybersecurity training academy website focused on Red Team operations, ethical hacking, and offensive security.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wakxup777/shnan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wakxup777/shnan/issues"
+  },
+  "homepage": "https://github.com/wakxup777/shnan#readme",
+  "dependencies": {
+    "pdfkit": "^0.18.0"
+  }
+}
